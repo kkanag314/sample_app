@@ -5,6 +5,24 @@ const speedButtons = document.querySelectorAll('.speed-btns button');
 let playbackRate = 1;
 let seekBarWidth = progressBar.offsetWidth;
 
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        document.getElementById("speed-1").click();
+    }
+    else if (e.keyCode == '37') {
+       document.getElementById("speed-2").click();
+    }
+    else if (e.keyCode == '39') {
+       document.getElementById("speed-3").click();
+    }
+
+}
+
 function setPlaySpeed(speed) {
 	playbackRate = speed;
 	video.playbackRate = speed;
