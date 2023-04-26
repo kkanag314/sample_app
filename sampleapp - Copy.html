@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player</title>
+	<style>
+		#video-container {
+			position: relative;
+			margin: 10px 0;
+		}
+
+		#video {
+			width: 100%;
+			height: auto;
+		}
+
+		#progress-bar {
+			width: 100%;
+			height: 10px;
+			background-color: #ccc;
+			position: relative;
+			cursor: pointer;
+		}
+
+		#seek-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			width: 10px;
+			height: 100%;
+			background-color: orange;
+			transform-origin: left center;
+			transform: scaleX(0);
+			transition: transform 0.2s linear;
+		}
+
+		.speed-btns button {
+			margin-right: 10px;
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="video-container">
+		<video id="video" src="trickplay.mp4" autoplay="autoplay" muted="muted" type="video/mp4"></video>
+		<div id="progress-bar">
+			<div id="seek-bar">
+			</div>
+		</div>
+	</div>
+	<div class="speed-btns">
+		<button id="speed-1" onclick="setPlaySpeed(1)">1x</button>
+		<button id="speed-2" onclick="setPlaySpeed(2)">2x</button>
+		<button id="speed-3" onclick="setPlaySpeed(3)">3x</button>
+	</div>
+
+	<script src="video-player.js"></script>
+</body>
+</html>
