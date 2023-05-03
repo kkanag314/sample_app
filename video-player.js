@@ -35,17 +35,22 @@ function updateSeekBar() {
 
 	seekBarPosition = seekBarPosition * playbackRate;
 	seekBar.style.transform = `translateX(${seekBarPosition}px) scaleX(${playbackRate})`;
+	seekBar.style.transitionDuration='500ms';
 }
 
 video.addEventListener('play', () => {
 	seekBarWidth = progressBar.offsetWidth;
 });
 
-video.addEventListener('timeupdate', () => {
+setInterval(function () {if (!video.paused && !video.ended) {
+	updateSeekBar();
+}}, 500);
+
+/*video.addEventListener('timeupdate', () => {
 	if (!video.paused && !video.ended) {
 		updateSeekBar();
 	}
-});
+});*/
 
 progressBar.addEventListener('click', (event) => {
 	const boundingRect = progressBar.getBoundingClientRect();
