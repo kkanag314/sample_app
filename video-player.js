@@ -35,7 +35,7 @@ function updateSeekBar() {
 
 	seekBarPosition = seekBarPosition * playbackRate;
 	seekBar.style.transform = `translateX(${seekBarPosition}px) scaleX(${playbackRate})`;
-	seekBar.style.transitionDuration='500ms';
+	seekBar.style.transitionDuration='200ms';
 }
 
 video.addEventListener('play', () => {
